@@ -64,14 +64,10 @@ const isActive = (href) => {
                   target="_blank"
                   aria-label={link.label}
                 >
-                  <Icon name={link.icon} class="w-6 h-6" />
+                  <Icon name={link.icon} class="h-6 w-6" />
                 </a>
               </li>
             ))}
-
-          <li>
-            <ColorSwitch client:idle />
-          </li>
 
           <li class="md:hidden">
             <NavMobile
