@@ -60,7 +60,8 @@ body {
 }
 
 .surface-primary {
-  @apply bg-primary text-white dark:text-white;
+  /* @apply bg-primary text-white dark:text-white; */
+  @apply bg-[#38bdf8] text-black dark:text-white;
   a:not([class]) {
     @apply text-light;
   }
@@ -109,7 +110,7 @@ body {
 }
 
 .surface-menu {
-  @apply bg-light bg-opacity-90 text-primary  dark:bg-dark dark:bg-opacity-90;
+  @apply bg-light bg-opacity-90 text-primary  dark:bg-[#F3F1EE];
   .nav-links {
     @apply text-dark dark:text-white;
   }
