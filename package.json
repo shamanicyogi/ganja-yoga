@@ -29,6 +29,7 @@
     "@astrojs/tailwind": "^5.1.0",
     "@astrojs/vue": "^4.0.8",
     "@fontsource-variable/inter-tight": "^5.0.19",
+    "@fontsource/abril-fatface": "^5.0.18",
     "@nanostores/vue": "^0.10.0",
     "@panzoom/panzoom": "^4.5.1",
     "@remark-embedder/core": "^3.0.2",
