@@ -376,6 +376,10 @@ body {
     @apply text-3xl font-extrabold sm:text-4xl;
     text-wrap: balance;
   }
+
+  @media (max-width: 768px) {
+      font-size: 36px;
+  }
 }
 
 .subtitle {
