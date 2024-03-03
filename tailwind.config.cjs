@@ -14,7 +14,7 @@ module.exports = {
         success: "rgb(var(--color-success) / <alpha-value>)",
         light: "rgb(var(--color-light) / <alpha-value>)",
         dark: "rgb(var(--color-dark) / <alpha-value>)",
-        info: "rgb(var(--color-info) / <alpha-value>)",
+        info: "rgb(var(--color-neon) / <alpha-value>)",
       },
       fontFamily: {
         sans: ["Abril Fatface", "'Inter Tight Variable'", "Helvetica", "Verdana", "sans-serif"],

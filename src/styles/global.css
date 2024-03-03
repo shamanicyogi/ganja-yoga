@@ -13,6 +13,10 @@
     --color-light: 243 241 239; /* THIS CONTROL BG - 000 000 000; */
     --color-info: 25 28 38;
 
+    /* Custom */
+    --color-neon: 199 234 91;
+    --color-black: 000 000 000;
+
     --spacing: 1rem;
     --w-xl: 75rem;
     --w-lg: 65rem;
@@ -32,7 +36,7 @@
 
   [data-theme="dark"] {
     body {
-      --color-primary: 135 94 212;
+      --color-primary: 199 234 91;
       --color-secondary: 107 154 199;
       --color-accent: 119 112 150;
       --color-warning: 202 121 45;
@@ -44,6 +48,8 @@
     }
   }
 }
+
+/* rgb(var(--color-dark) / var(--tw-bg-opacity)) */
 
 /* SURFACES */
 
@@ -57,17 +63,18 @@ body {
 }
 
 .surface-base {
-  @apply bg-light text-dark dark:bg-dark dark:text-light;
+  @apply bg-dark text-dark dark:bg-dark dark:text-light;
 }
 
+/* This controls button */
 .surface-primary {
   /* @apply bg-primary text-white dark:text-white; */
-  @apply bg-[#C7EA5B] text-black dark:text-white;
+  @apply bg-[#C7EA5B] text-[#000000] dark:text-[#000000];
+  font-weight: bolder;
   a:not([class]) {
     @apply text-light;
   }
 }
-
 .surface-secondary {
   @apply bg-secondary text-dark;
   a:not([class]) {
@@ -107,11 +114,13 @@ body {
 }
 
 .surface-footer {
-  @apply bg-dark bg-opacity-80 text-light;
+  @apply bg-dark text-[#C7EA5B];
 }
 
 .surface-menu {
-  @apply bg-light bg-opacity-90 text-primary  dark:bg-[#F3F1EE];
+  @apply bg-opacity-100 text-primary;
+  width: 100%;
+  
   .nav-links {
     @apply text-dark dark:text-white;
   }
@@ -346,8 +355,18 @@ body {
 /* TYPOGRAFY */
 
 .title {
-  @apply text-4xl font-extrabold sm:text-6xl md:text-5xl lg:text-7xl;
+  @apply text-4xl font-extrabold sm:text-6xl md:text-5xl lg:text-7xl/*  text-light */;
   text-wrap: balance;
+
+  font-family: Abril Fatface;
+  font-size: 129px;
+
+  line-height: 1.25;
+
+  /* TODO add media queries for font size */
+
+  color: wheat;
+  opacity: 0.9 !important;
 
   &-md {
     @apply text-2xl font-extrabold sm:text-4xl md:text-5xl lg:text-5xl;

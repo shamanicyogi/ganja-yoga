@@ -8,7 +8,7 @@ intro: Customize your Nebulix template effortlessly with these quick tips on
   colors, fonts, logos, and icons
 blocks: []
 style:
-  template: split
+  template: full
   card_template: grid
   hero_template: image
   container: md
@@ -16,6 +16,7 @@ style:
 pubDate: 2023-09-03T12:14:45.064+02:00
 thumbnail: /src/assets/nebulix-style.jpeg
 ---
+
 ## Tailwind, Tailwind, Tailwind
 
 This template is built upon the versatile Tailwind CSS framework. If you wish to modify elements styled with Tailwind, take a look at the `tailwind.config.cjs` file and the `src/style/global.css` file.
@@ -28,28 +29,28 @@ In this template, we have established the following color categories: `primary`,
 
 ```css
 :root {
-	--color-primary: 75 38 143;
-	--color-secondary: 107 154 199;
-	--color-accent: 119 112 150;
-	--color-warning: 202 121 45;
-	--color-danger: 244 67 54;
-	--color-success: 77 137 101;
-	--color-dark: 25 28 38;
-	--color-light: 243 241 239;
-	--color-info: 25 28 38;
+  --color-primary: 75 38 143;
+  --color-secondary: 107 154 199;
+  --color-accent: 119 112 150;
+  --color-warning: 202 121 45;
+  --color-danger: 244 67 54;
+  --color-success: 77 137 101;
+  --color-dark: 25 28 38;
+  --color-light: 243 241 239;
+  --color-info: 25 28 38;
 }
 @media (prefers-color-scheme: dark) {
-	:root {
-		--color-primary: 135 94 212;
-		--color-secondary: 107 154 199;
-		--color-accent: 119 112 150;
-		--color-warning: 202 121 45;
-		--color-danger: 244 67 54;
-		--color-success: 77 137 101;
-		--color-dark: 25 28 38;
-		--color-light: 243 241 239;
-		--color-info: 25 28 38;
-	}
+  :root {
+    --color-primary: 135 94 212;
+    --color-secondary: 107 154 199;
+    --color-accent: 119 112 150;
+    --color-warning: 202 121 45;
+    --color-danger: 244 67 54;
+    --color-success: 77 137 101;
+    --color-dark: 25 28 38;
+    --color-light: 243 241 239;
+    --color-info: 25 28 38;
+  }
 }
 ```
 
@@ -68,8 +69,8 @@ Certain elements like blocks, buttons, and various components offer a surface se
 To optimize website loading speed, we utilize Fontsource for fonts. However, you are not bound to this choice; feel free to use any font of your preference. Ensure that you set the font family in the body of `/src/styles/global.css` and in `tailwind.config.cjs`. The fonts are imported in `src/layouts/BaseLayout.astro`.
 
 ```javascript
-import '@fontsource-variable/inter-tight'
-import '@fontsource-variable/inter-tight/wght-italic.css'
+import "@fontsource-variable/inter-tight";
+import "@fontsource-variable/inter-tight/wght-italic.css";
 ```
 
 ### Logo

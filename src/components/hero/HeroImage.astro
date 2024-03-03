@@ -28,7 +28,7 @@ const { slug } = Astro.params;
   transition:name={`hero_${slug || Math.random()}`}
   id="header"
 >
-  {
+  <!-- {
     thumbnail && (
       <div class="media parallax h-full w-full">
         <Picture
@@ -38,7 +38,7 @@ const { slug } = Astro.params;
               style: `opacity: ${style.hero_image_opacity || 0.7}`,
             },
           }}
-          src={thumbnail}
+          src="src/assets/yoga_greece.mp4"
           width={1920}
           height={1080}
           ar={16 / 10}
@@ -65,7 +65,9 @@ const { slug } = Astro.params;
         />
       </div>
     )
-  }
+  } -->
+
+  <video src="src/assets/yoga_greece.mp4" autoplay muted loop></video>
 
   <div
     class="absolute inset-0 z-10 grid place-items-center bg-dark bg-opacity-20"

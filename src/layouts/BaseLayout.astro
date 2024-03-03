@@ -14,6 +14,11 @@ import "@fontsource-variable/inter-tight";
 import "@fontsource-variable/inter-tight/wght-italic.css";
 import "@fontsource/abril-fatface";
 
+import { Tweet, Vimeo, YouTube } from "astro-embed";
+
+// TODO UPDATE NAV - (About, Workshops, Upcoming, Blog, Shop, Contact)
+// TODO - Discount code popup
+
 const lang = import.meta.env.WEBSITE_LANGUAGE;
 const currency = import.meta.env.CURRENCY;
 const snipcartKey = import.meta.env.SNIPCART_KEY;
@@ -49,6 +54,7 @@ const contact = await getEntry("config", "contact");
       social={contact.data.social}
       about={about.data}
     />
+    <!-- <video src="src/assets/yoga_greece.mp4" autoplay muted loop></video> -->
     <main>
       <slot />
     </main>
