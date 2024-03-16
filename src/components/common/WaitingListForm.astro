@@ -1,0 +1,113 @@
+---
+import ModalWrapper from "./ModalWrapper.astro";
+import { Image } from "astro:assets";
+// import localJitzImage from "../assets/images/jitz.jpg";
+---
+
+<!-- <ModalWrapper id="dialog" open="Open modal"> -->
+<div
+  style={{
+    background: "white",
+    padding: "20px",
+    fontFamily:
+      /* "Abril Fatface", */ "'Inter Tight Variable', 'Adjusted Arial Fallback', 'arial'",
+  }}
+>
+  <div class="inner-container">
+    <div>
+      <!-- <Image src={localJitzImage} alt="Two men pracitsicing Jiu Jitsu." /> -->
+      <span style={{ fontSize: "1.75rem", fontWeight: "bold", color: "black" }}>
+        Join the Waitlist
+      </span>
+      <p
+        class="mt-20"
+        style={{ color: "rgb(89 86 101 / var(--tw-text-opacity))" }}
+      >
+        Subscribe to get updates on upcoming classes, retreats, and product
+        offerings.
+      </p>
+    </div>
+
+    <form class="form-container mt-20">
+      <input
+        class="email-input"
+        placeholder="Your email address"
+        type="email"
+      />
+      <button class="submit-button disabled mt-10">Subscribe</button>
+      <span class="error-message" style="color: red; display: none;"
+        >Please enter a valid email address.</span
+      >
+    </form>
+  </div>
+</div>
+
+<script>
+  const emailInput = document.querySelector(".email-input");
+  const submitButton = document.querySelector(".submit-button");
+  const errorMessage = document.querySelector(".error-message");
+
+  console.log(submitButton, "LOOK");
+
+  // Function to handle Submit
+  async function submit(email: string) {
+    function isValidEmail(email: string) {
+      // Regular expression for basic email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    }
+
+    const validEmail = isValidEmail(email);
+
+    console.log(validEmail, "validEmail");
+
+    if (validEmail) {
+      console.log(validEmail, "validEmail");
+
+      await fetch("/api/mailchimp", {
+        method: "POST",
+        body: JSON.stringify({
+          email,
+        }),
+      }).catch();
+    } else {
+      console.log("Invalid email.");
+      errorMessage.style.display = "block";
+    }
+  }
+
+  // Listen for Input in Email Field
+  emailInput.addEventListener("input", () => {
+    if (emailInput.value.trim() !== "") {
+      submitButton.classList.remove("disabled");
+      errorMessage.style.display = "none";
+    } else {
+      submitButton.classList.add("disabled");
+    }
+  });
+
+  // Listen for Submit
+  submitButton.addEventListener("click", async (e) => {
+    e.preventDefault();
+    try {
+      await submit(emailInput?.value);
+    } catch (error) {
+      throw new Error((error as Error).message);
+    }
+  });
+
+  // // Trigger modal on DOM load
+  // document.addEventListener("DOMContentLoaded", function () {
+  //   // @ts-ignore
+  //   setTimeout(() => window["dialog"].showModal(), 3000);
+  // });
+
+  // // Listen for 'Close Button' click
+  // const closeButton = document.querySelector(".close-button");
+  // document.addEventListener("click", function (event) {
+  //   // @ts-ignore
+  //   if (event.target.id === "dialog") closeButton.click();
+  // });
+</script>
+
+<!-- </ModalWrapper> -->
