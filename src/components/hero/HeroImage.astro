@@ -3,6 +3,7 @@ import { Picture } from "astro-imagetools/components";
 import Button from "@components/navigation/Button.astro";
 import ItemFilter from "@components/navigation/ItemFilter.astro";
 import FormattedDate from "@components/FormattedDate.astro";
+import yogaVideo from "./yoga_greece.mp4";
 
 const {
   title,
@@ -67,8 +68,7 @@ const { slug } = Astro.params;
     )
   } -->
 
-  <img src="src/assets/paper_cup.jpeg" />
-  <video src="src/assets/yoga_greece.mp4" autoplay muted loop controls></video>
+  <video src={yogaVideo} autoplay muted loop controls></video>
 
   <div
     class="absolute inset-0 z-10 grid place-items-center bg-dark bg-opacity-20"
