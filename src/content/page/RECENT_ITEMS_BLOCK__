@@ -1,0 +1,12 @@
+  - type: recentitems
+    component: RecentItems
+    page_type: blog
+    count: 3
+    container: md
+    template: list
+    animate: true
+    title: Learn about Ganja Yoga
+    surface: bg-slate-200 text-dark dark:bg-[#353640] dark:text-white
+    content: >
+      The following articles will help you understand what ganja yoga can do for
+      you.

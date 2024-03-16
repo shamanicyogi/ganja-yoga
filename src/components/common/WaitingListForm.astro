@@ -1,21 +1,13 @@
----
-import ModalWrapper from "./ModalWrapper.astro";
-import { Image } from "astro:assets";
-// import localJitzImage from "../assets/images/jitz.jpg";
----
-
-<!-- <ModalWrapper id="dialog" open="Open modal"> -->
+<!-- UI -->
 <div
   style={{
     background: "white",
     padding: "20px",
-    fontFamily:
-      /* "Abril Fatface", */ "'Inter Tight Variable', 'Adjusted Arial Fallback', 'arial'",
+    fontFamily: "'Inter Tight Variable', 'Adjusted Arial Fallback', 'arial'",
   }}
 >
   <div class="inner-container">
     <div>
-      <!-- <Image src={localJitzImage} alt="Two men pracitsicing Jiu Jitsu." /> -->
       <span style={{ fontSize: "1.75rem", fontWeight: "bold", color: "black" }}>
         Join the Waitlist
       </span>
@@ -35,19 +27,22 @@ import { Image } from "astro:assets";
         type="email"
       />
       <button class="submit-button disabled mt-10">Subscribe</button>
-      <span class="error-message" style="color: red; display: none;"
+      <span class="error-message mt-10" style="color: red; display: none;"
         >Please enter a valid email address.</span
+      >
+      <span class="success-message mt-10" style="color: green; display: none;"
+        >Success 😎! Keep an eye on your inbox for updates!.</span
       >
     </form>
   </div>
 </div>
 
+<!-- Handle email submission -->
 <script>
   const emailInput = document.querySelector(".email-input");
   const submitButton = document.querySelector(".submit-button");
   const errorMessage = document.querySelector(".error-message");
-
-  console.log(submitButton, "LOOK");
+  const successMessage = document.querySelector(".success-message");
 
   // Function to handle Submit
   async function submit(email: string) {
@@ -59,19 +54,16 @@ import { Image } from "astro:assets";
 
     const validEmail = isValidEmail(email);
 
-    console.log(validEmail, "validEmail");
-
     if (validEmail) {
-      console.log(validEmail, "validEmail");
-
-      await fetch("/api/mailchimp", {
+      const res = await fetch("/api/mailchimp", {
         method: "POST",
         body: JSON.stringify({
           email,
         }),
       }).catch();
+
+      return res;
     } else {
-      console.log("Invalid email.");
       errorMessage.style.display = "block";
     }
   }
@@ -90,24 +82,29 @@ import { Image } from "astro:assets";
   submitButton.addEventListener("click", async (e) => {
     e.preventDefault();
     try {
-      await submit(emailInput?.value);
+      const res = await submit(emailInput?.value);
+      const { status } = res;
+
+      if (status === 200) {
+        successMessage.style.display = "block";
+        setTimeout(() => {
+          successMessage.style.display = "none";
+        }, 5000);
+
+        emailInput.value = "";
+      }
+
+      // fix image/video
+
+      // learn more button
+
+      // lityoga.blog - ganjayogaretreats.blog
+
+      // blog layout / color
+
+      // update blogs/clean up other pages
     } catch (error) {
       throw new Error((error as Error).message);
     }
   });
-
-  // // Trigger modal on DOM load
-  // document.addEventListener("DOMContentLoaded", function () {
-  //   // @ts-ignore
-  //   setTimeout(() => window["dialog"].showModal(), 3000);
-  // });
-
-  // // Listen for 'Close Button' click
-  // const closeButton = document.querySelector(".close-button");
-  // document.addEventListener("click", function (event) {
-  //   // @ts-ignore
-  //   if (event.target.id === "dialog") closeButton.click();
-  // });
 </script>
-
-<!-- </ModalWrapper> -->
