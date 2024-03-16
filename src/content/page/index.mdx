@@ -17,14 +17,13 @@ layout-hidden: blog
 blocks:
   - type: recentitems
     component: RecentItems
-    page_type: blog
-    count: 3
+    page_type: menu
+    count: ""
     container: md
     template: list
-    animate: true
-    post_tag:
-      - Docs
-    title: Learn about Ganja Yoga
+    animate: false
+    post_tag: []
+    title: ""
     surface: bg-slate-200 text-dark dark:bg-[#353640] dark:text-white
     content: >
       The following articles will help you understand what ganja yoga can do for
@@ -32,24 +31,14 @@ blocks:
   - type: text_image
     component: TextImage
     container: full
-    template: banner
+    template: column
     title: My Image
     image_size: "50"
     reverse: false
     animate: false
-    thumbnail: /src/assets/jared-rice-8w7b4sdhogw-unsplash.jpg
+    thumbnail: /src/assets/ksenia-makagonova-v-tipboc_2m-unsplash.jpg
     content: |
       Waiting list for ganja yoga classes and retreats
-  - type: recentitems
-    component: RecentItems
-    page_type: blog
-    count: 3
-    container: md
-    template: list
-    animate: true
-    title: Learn about Ganja Yoga
-    content: The following articles will help you understand what ganja yoga can do
-      for you.
 style:
   hero_template: image
   template: full
