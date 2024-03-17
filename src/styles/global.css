@@ -57,18 +57,24 @@
 h2 {
   @apply text-[#000] dark:text-[#C7EA5B];
 }
+.card-title {
+  color: #C7EA5B;
+}
 
 strong {
   @apply text-[#000] dark:text-[#C7EA5B];
 }
 
 #more {
-  background-color: #fff;
+  @apply bg-slate-200 text-[#595665] dark:bg-[#353640] dark:text-[#fff]
 }
 
 .bg-wh {
   background-color: #fff !important;
+}
 
+.nav-link {
+  color: wheat;
 }
 
 /* EMAIL FORM */
@@ -418,7 +424,8 @@ body {
 /* TYPOGRAFY */
 
 .title {
-  @apply text-4xl font-extrabold sm:text-6xl md:text-5xl lg:text-7xl/*  text-light */;
+  @apply text-4xl font-extrabold sm:text-6xl md:text-5xl lg:text-7xl;
+  @apply text-[wheat] dark:text-[#C7EA5B];
   text-wrap: balance;
 
   font-family: Abril Fatface;
@@ -426,9 +433,6 @@ body {
 
   line-height: 1.25;
 
-  /* TODO add media queries for font size */
-
-  color: wheat;
   opacity: 0.9 !important;
 
   &-md {
