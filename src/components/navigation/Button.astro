@@ -9,7 +9,7 @@ const target = href.includes("http") ? "_blank" : "_self";
   href={href}
   class={`btn ${color || `surface-primary`} ${className || ""} ${
     !icon_only || "btn-icon"
-  }`}
+  } nav-link`}
   target={target}
 >
   {icon && <Icon name={getIconName(icon)} class="h-6 w-6" />}
