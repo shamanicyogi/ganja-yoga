@@ -15,9 +15,9 @@
       class="surface-menu nav-mobile fixed inset-0 grid h-full auto-rows-min place-items-center gap-4 px-4 pt-4"
       v-show="show"
     >
-      <div class="mx-auto max-w-[12rem] pt-10">
+      <!-- <div class="mx-auto max-w-[12rem] pt-10">
         <slot name="logo" />
-      </div>
+      </div> -->
       <slot name="links" />
       <slot name="social" />
     </div>
