@@ -54,6 +54,9 @@
 /* rgb(var(--color-dark) / var(--tw-bg-opacity)) */
 
 /* MARKDOWN OVERRIDES */
+a {
+  text-decoration: underline;
+}
 h2 {
   @apply text-[#000] dark:text-[#C7EA5B];
 }
@@ -75,6 +78,7 @@ strong {
 
 .nav-link {
   color: wheat;
+  text-decoration: none;
 }
 
 /* EMAIL FORM */
