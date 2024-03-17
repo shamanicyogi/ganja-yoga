@@ -15,8 +15,6 @@ const style = data?.style ? data.style : page.data.style;
 const sizes = getGridImageSizes(data?.style?.container || "md");
 const template = style?.template ? data.style.template : "split";
 let pagerSlug = base_url;
- 
-
 if (filter_type) pagerSlug += `/${filter_type}`;
 if (filter) pagerSlug += `/${slugify(filter)}`;
 

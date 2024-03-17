@@ -16,9 +16,6 @@ import "@fontsource/abril-fatface";
 
 import { Tweet, Vimeo, YouTube } from "astro-embed";
 
-// TODO UPDATE NAV - (About, Workshops, Upcoming, Blog, Shop, Contact)
-// TODO - Discount code popup
-
 const lang = import.meta.env.WEBSITE_LANGUAGE;
 const currency = import.meta.env.CURRENCY;
 const snipcartKey = import.meta.env.SNIPCART_KEY;
@@ -67,8 +64,8 @@ const contact = await getEntry("config", "contact");
             aria-label={t("back_to_top")}
             class="btn btn-icon surface-primary btn-to-top pointer-events-auto opacity-0"
           >
-            <Icon name="up" class="w-6" /></a
-          >
+            <Icon name="up" class="w-6" />
+          </a>
         </div>
       </div>
     </Footer>

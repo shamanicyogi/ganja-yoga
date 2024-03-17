@@ -62,6 +62,15 @@ strong {
   @apply text-[#000] dark:text-[#C7EA5B];
 }
 
+#more {
+  background-color: #fff;
+}
+
+.bg-wh {
+  background-color: #fff !important;
+
+}
+
 /* EMAIL FORM */
 .form-container {
   display: flex;
@@ -114,7 +123,7 @@ body {
 }
 
 .surface-base {
-  @apply bg-dark text-dark dark:bg-dark dark:text-light;
+  @apply bg-[#fff] text-dark dark:bg-dark dark:text-light;
 }
 
 /* This controls button */
@@ -166,6 +175,9 @@ body {
 
 .surface-footer {
   @apply bg-dark text-[#C7EA5B];
+  /* position: absolute;
+  width: 100%;
+  bottom: 0; */
 }
 
 .surface-menu {
@@ -406,6 +418,34 @@ body {
 /* TYPOGRAFY */
 
 .title {
+  @apply text-4xl font-extrabold sm:text-6xl md:text-5xl lg:text-7xl/*  text-light */;
+  text-wrap: balance;
+
+  font-family: Abril Fatface;
+  font-size: 48px;
+
+  line-height: 1.25;
+
+  /* TODO add media queries for font size */
+
+  color: wheat;
+  opacity: 0.9 !important;
+
+  &-md {
+    @apply text-2xl font-extrabold sm:text-4xl md:text-5xl lg:text-5xl;
+    text-wrap: balance;
+  }
+  &-sm {
+    @apply text-3xl font-extrabold sm:text-4xl;
+    text-wrap: balance;
+  }
+
+  @media (max-width: 768px) {
+      font-size: 36px;
+  }
+}
+
+.landing-page-title {
   @apply text-4xl font-extrabold sm:text-6xl md:text-5xl lg:text-7xl/*  text-light */;
   text-wrap: balance;
 
