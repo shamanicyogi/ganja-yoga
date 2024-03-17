@@ -15,13 +15,13 @@
     </div>
   </transition>
 
-  <button
+  <!-- <button
     @click="openSearchUi()"
     class="grid h-full place-items-center"
     :aria-label="translations.search"
   >
     <slot name="btn-search" />
-  </button>
+  </button> -->
 </template>
 
 <script setup>
